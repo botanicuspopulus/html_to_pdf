@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "htmltopdf"
+version = "0.1.0"
+description = ""
+authors = ["William Smith <wsmith1@csir.co.za>"]
+readme = "README.md"
+
+[virtualenvs]
+prefer-active-python = true
+
+[tool.poetry.dependencies]
+python = "~3.11"
+weasyprint = "^62.3"
+py2wasm = "^2.6.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
