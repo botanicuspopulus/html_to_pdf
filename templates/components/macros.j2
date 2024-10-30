@@ -1,0 +1,16 @@
+{% macro render_reliance_section(title, items) %}
+  {% if items %}
+    <p>AND FURTHER TAKE NOTICE that the undersigned will rely on the following {{ title }}:</p> 
+    <div class=relied-{{ title | lower }}">
+      <ol>
+        {% for item in items %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro add_stylesheet(url) %}
+  <link rel="stylesheet" type="text/css" href="{{ url }}">
+{% endmacro %}

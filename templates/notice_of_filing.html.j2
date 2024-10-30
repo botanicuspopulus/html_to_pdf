@@ -1,0 +1,16 @@
+<!-- notice_of_filing.html -->
+{% extends "components/base.html.j2" %}
+{% from "components/macros.html.j2" import render_reliance_section %}
+
+{% block content %}
+  <p>TAKE NOTICE that the undersigned will file the following documents with the Court on the {{ filing_date }}:</p>
+
+  {{ render_reliance_section("documents", relied_documents) }}
+  {{ render_reliance_section("authorities", relied_authorities) }}
+  {{ render_reliance_section("evidence", relied_evidence) }}
+  {{ render_reliance_section("witnesses", relied_witnesses) }}
+  {{ render_reliance_section("experts", relied_experts) }}
+  {{ render_reliance_section("submissions", relied_submissions) }}
+
+  {% include "components/signature_block.html.j2" %}
+{% endblock %}

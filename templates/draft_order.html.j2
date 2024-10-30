@@ -1,0 +1,15 @@
+<!-- draft_order.html -->
+{% extends "components/base.html.j2" %}
+
+{% block content %}
+  {% include "components/base_header.html.j2" %}
+
+  <p>It is hereby ordered that:</p>
+
+  <div class="order-content">
+    {{ order_content }}
+  </div>
+
+  {% include "components/base_footer.html.j2" %}
+
+{% endblock %}}

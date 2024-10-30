@@ -1,0 +1,21 @@
+{% from "components/macros.j2" import add_stylesheet %}
+
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  {{ add_stylesheet("css/base.css") }}
+  {{ add_stylesheet("css/header.css") }}
+  <link rel="stylesheet" type="text/css" href="css/print.css" media="print">
+  {% block styles %}
+  {% endblock %}
+</head>
+<body>
+  {% include "components/base_header.html.j2" %}
+
+  {% block content %}
+  {% endblock %}
+</body>
+</html>

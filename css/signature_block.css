@@ -1,0 +1,17 @@
+.signature-block {
+  display: flex;
+  float: right;
+  margin-top: 20mm;
+  text-align: right;
+  line-height: 1;
+}
+
+.signature-line {
+  border-top: 1px solid black;
+}
+
+.signature-name {
+  position: relative;
+  font-weight: bold;
+  text-transform: uppercase;
+}

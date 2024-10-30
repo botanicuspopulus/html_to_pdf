@@ -12,6 +12,7 @@ prefer-active-python = true
 python = "~3.11"
 weasyprint = "^62.3"
 py2wasm = "^2.6.3"
+jinja2 = "^3.1.4"
 
 
 [build-system]

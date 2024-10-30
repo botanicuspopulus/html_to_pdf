@@ -16,7 +16,7 @@ def convert_html_to_pdf(file_paths: list[Path]):
 
         print(f"Converted {file_path} to {output_file}")
 
-def main():
+if __name__ == "__main__":
     parser  = argparse.ArgumentParser(description="Convert HTML files to PDF")
     parser.add_argument("filenames", metavar="F", type=str, nargs="+", help="HTML files to convert to PDF")
     args = parser.parse_args()
@@ -27,6 +27,3 @@ def main():
         print("Conversion cancelled")
     except Exception as e:
         print(f"Error: {e}")
-
-if __name__ == "__main__":
-    main()

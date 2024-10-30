@@ -1,0 +1,31 @@
+<!-- founding_affidavit.html -->
+{% extends "components/base.html.j2" %}
+
+{% from "components/macros.j2" import add_stylesheet %}
+
+{% block styles %}
+{{ add_stylesheet("css/signature_block.css") }}
+{{ add_stylesheet("css/commissioner_block.css") }}
+{{ add_stylesheet("css/affidavit.css") }}
+{% endblock %}
+
+{% block content %}
+  <p>I, the undersigned,</p>
+
+  <div class="affiant">
+    <p>{{ affiant.name }}</p>
+    <p>{{ affiant.id_no }}</p>
+  </div>
+  
+  <p>do hereby make oath and say that:</p>
+
+  <div class="affidavit-content">
+    {%  for paragraph in affidavit_content %}
+      <p>{{ paragraph }}</p>
+    {% endfor %}
+  </div>
+
+  {% include "components/signature_block.html.j2" %}
+
+  {% include "components/commissioner_block.html.j2" %}
+{% endblock %}

@@ -1,0 +1,39 @@
+<!-- base_header.html -->
+<div class="header">
+  <div class="court-info">
+    <p>IN THE {{ court.name }}</p>
+    <p>{{ court.division }}</p>
+  </div>
+
+  <div class="case-number">
+    <p>Case Number: {{ case.number }}</p>
+  </div>
+
+  <br>
+  <p>In the matter between:</p>
+  <br>
+
+  <div class="parties">
+    {% for party in parties %}
+    <div class="party">
+      <div class="party-description">
+        <p>{{ party.name }}</p>
+        <p>{{ party.description }}</p>
+      </div>
+      <div class="party-role">
+        <p>{{ party.role }}</p>
+      </div>
+    </div>
+    {% if not loop.last %}
+    <p>and</p>
+    <br>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="document-title">
+    <div class="horizontal-line-top"></div>
+    <h2>{{ document.title }}</h2>
+    <div class="horizontal-line-bottom"></div>
+  </div>
+</div>

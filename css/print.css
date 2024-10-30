@@ -1,0 +1,10 @@
+@page {
+  size: A4;
+  margin: 2cm;
+}
+
+body {
+  color: black;
+  background-color: white;
+  margin: 0;
+}

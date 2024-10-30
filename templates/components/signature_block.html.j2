@@ -1,0 +1,21 @@
+<!-- signature_block.html -->
+<div class="signature-block">
+  <span class="signature-line">
+    <span class="signature-name">{{ signatory.name }}</span>
+    {% if signatory.role %}
+    <p>{{ signatory.role }}</p>
+    {% endif %}
+    {% if signatory.address %}
+    <p>{{ signatory.address }}</p>
+    {% endif %}
+    {% if signatory.email %}
+    <p>E-mail: {{ signatory.email }}</p>
+    {% endif %}
+    {% if signatory.phone %}
+    <p>Phone: {{ signatory.phone }}</p>
+    {% endif %}
+    {% if signatory.fax %}
+    <p>Fax: {{ signatory.fax }}</p>
+    {% endif %}
+  </span>
+</div>

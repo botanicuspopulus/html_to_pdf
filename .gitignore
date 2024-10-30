@@ -1,0 +1,4 @@
+test/output
+.python-version
+html_to_pdf.wasm
+poetry.lock

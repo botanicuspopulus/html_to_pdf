@@ -1,0 +1,11 @@
+.affiant p {
+  font-weight: bold;
+}
+
+.affiant p:first-child {
+  text-transform: uppercase;
+}
+
+.affiant p:last-child {
+  font-style: italic;
+}

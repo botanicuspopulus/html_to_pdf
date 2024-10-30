@@ -1,0 +1,13 @@
+<!-- notice_of_intention_to_oppose.html -->
+{% extends "components/base.html.j2" %}
+{% from "components/macros.html.j2" import render_reliance_section %}
+
+{% block content %}
+  <p>TAKE NOTICE that the undersigned intends to oppose the motion brought by the moving party on the {{ motion_date }} at {{ motion_time }} or so soon thereafter as counsel may be heard.</p>
+
+  <div class="opposition-content">
+    {{ opposition_content }}
+  </div>
+
+  {% include "components/signature_block.html.j2" %}
+{% endblock %}

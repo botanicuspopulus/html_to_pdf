@@ -1,0 +1,60 @@
+.header {
+  text-align: left;
+  line-height: 1em;
+}
+
+.court-info {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.document-title {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+  padding-top: 5mm;
+  padding-bottom: 5mm;
+
+  margin-top: 10mm;
+  margin-bottom: 10mm;
+
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.case-number {
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.party {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.party-description {
+  text-align: left;
+}
+
+.party-description p:first-child {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.party-role {
+  font-weight: bold;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid black;
+}
