@@ -1,3 +1,48 @@
 <!-- commissioner_section.html -->
-<div class="commissioner-section">
+<div class="commissioner-block">
+  <h3>OATH/AFFIRMATION</h3>
+  <p style="display: inline-block;">I, </p><div class="line line-long" style="margin-left: 1em; margin-right: 1em;"></div><p style="display: inline-block;">, hereby declare under oath/hereby truly affirm that to the best of my knowledge and belief the forgoing statements are true, complete and correct.</p>
+
+  <div class="signature-affiant">
+    <div class="line line-medium"></div>
+    <p>SIGNATURE</p>
+  </div>
+
+  <p>I, certify that before administering the oath/affirmation, I asked the following questions and wrote down the answers in his/her presence:</p>
+
+  {% set questions = [
+    "Do you know and understand the contents of the above declaration?",
+    "Do you have any objection to taking the prescribed oath?",
+    "Do you consider the prescribed oath binding on your conscience?"
+  ] %}
+
+  {%- for question in questions -%}
+  <div class="oath-question">
+    <p>{{ question }}</p>
+    <div style="display: inline-block; margin-right: 0.75em;">ANSWER:</div><div class="line line-short"></div>
+  </div>
+  {%- endfor -%}
+
+  <p>I, certify that the deponent has acknowledged that he/she knows and understands the contents of the declaration , which was sworn to/affirmed before me, and the deponent's signature was placed thereon in my presence.</p>
+
+  {%- set labels = ["COMMISSIONER OF OATHS", "FULL NAME", "DATE", "DESIGNATION"] -%}
+  {%- for label in labels -%}
+  <div class="label">
+    <div class="line line-medium" style="margin-top: 0.75em;"></div>
+    <p>{{ label }}</p>
+  </div>
+  {% endfor -%}
+
+  <div class="oath-address">
+    <div style="display: inline-block; margin-right: 0.75em;">ADDRESS:</div>
+    <div style="display: inline-block;">
+      <div class="line line-long" style="display:block; margin-top: 10mm;"></div>
+      <div class="line line-long" style="display:block; margin-top: 10mm;"></div>
+      <div class="line line-long" style="display:block; margin-top: 10mm;"></div>
+    </div>
+  </div>
+  <div class="oath-date">
+    <div style="display: inline-block; margin-top: 10mm; margin-right: 1em;">DATE:</div>
+    <div class="line line-medium"></div>
+  </div>
 </div>

@@ -1,0 +1,20 @@
+:root {
+  --base-indent: 10mm;
+}
+
+ol {
+  margin-left: 0;
+  padding-left: 0;
+  counter-reset: item;
+}
+
+ol li {
+  counter-increment: item;
+  list-style-type: none;
+  margin-left: var(--base-indent);
+  text-indent: calc(-1 * var(--base-indent));
+}
+
+ol li::before {
+  content: counters(item, ".") ". ";
+}

@@ -2,11 +2,15 @@
 {% extends "components/base.html.j2" %}
 
 {% from "components/macros.j2" import add_stylesheet %}
+{% from "components/macros.j2" import render_paragraphs %}
+
+{% block title %}Founding Affidavit{% endblock %}
 
 {% block styles %}
 {{ add_stylesheet("css/signature_block.css") }}
-{{ add_stylesheet("css/commissioner_block.css") }}
 {{ add_stylesheet("css/affidavit.css") }}
+{{ add_stylesheet("css/paragraph.css") }}
+{{ add_stylesheet("css/commissioner_block.css") }}
 {% endblock %}
 
 {% block content %}
@@ -14,15 +18,13 @@
 
   <div class="affiant">
     <p>{{ affiant.name }}</p>
-    <p>{{ affiant.id_no }}</p>
+    <p>ID No: {{ affiant.id_no }}</p>
   </div>
   
-  <p>do hereby make oath and say that:</p>
+  <p>do hereby make oath and state the following:</p>
 
   <div class="affidavit-content">
-    {%  for paragraph in affidavit_content %}
-      <p>{{ paragraph }}</p>
-    {% endfor %}
+    {{ render_paragraphs(affidavit_content) }}
   </div>
 
   {% include "components/signature_block.html.j2" %}

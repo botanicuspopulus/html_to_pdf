@@ -1,6 +1,12 @@
+@media print {
+  .header {
+    page-break-inside: avoid;
+  }
+}
+
 .header {
   text-align: left;
-  line-height: 1em;
+  line-height: 0.5em;
 }
 
 .court-info {

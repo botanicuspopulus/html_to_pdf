@@ -9,12 +9,10 @@
     <p>Case Number: {{ case.number }}</p>
   </div>
 
-  <br>
   <p>In the matter between:</p>
-  <br>
 
   <div class="parties">
-    {% for party in parties %}
+    {%- for party in parties -%}
     <div class="party">
       <div class="party-description">
         <p>{{ party.name }}</p>
@@ -24,11 +22,10 @@
         <p>{{ party.role }}</p>
       </div>
     </div>
-    {% if not loop.last %}
+    {%- if not loop.last -%}
     <p>and</p>
-    <br>
-    {% endif %}
-    {% endfor %}
+    {%- endif -%}
+    {%- endfor -%}
   </div>
 
   <div class="document-title">

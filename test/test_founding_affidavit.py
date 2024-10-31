@@ -6,8 +6,14 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 
 def main():
-    # Define the directory containing the templates
-    template_dir = '../templates'
+    # Define the directory containing the templates relative to where this script is located as  the calling location can be different to the actual script location
+    # This path needs to calculated
+    script_dir = Path(__file__).resolve().parent
+    css_src_dir = script_dir.parent / 'css'
+    template_dir = script_dir.parent / 'templates'
+    output_dir = script_dir / 'output'
+    test_output_dir = output_dir / 'founding_affidavit'
+    css_dir =  test_output_dir / 'css'
 
     # Create the Jinja2 environment
     env = Environment(
@@ -32,8 +38,7 @@ def main():
             'number': '12345/2024',
         },
         # Parties
-        'parties': 
-        [
+        'parties': [
             {
                 'name': 'John Doe',
                 'description': 'ID No. 8001015009087',
@@ -55,11 +60,49 @@ def main():
             'name': 'John Doe',
             'id_no': '8001015009087',
         },
-        'affidavit_content': (
-            '1. I am the applicant in this matter.\n',
-            '2. The facts deposed to herein are within my personal knowledge and are true and correct.\n',
-            '3. ...'  # Add more content as needed
-        ),
+        'affidavit_content': [
+            {
+                'text': 'I am the applicant in this matter.',
+                'subparagraphs': [
+                    {
+                        'text': 'The facts deposed to herein are within my personal knowledge and are true and correct.',
+                        'subparagraphs': [
+                            {
+                                'text': 'I have been involved in the matter since its inception.',
+                                'subparagraphs': [
+                                    {
+                                        'text': 'I have been involved in the matter since its inception.'
+                                    },
+                                    {
+                                        'text': 'I have reviewed all relevant documents.'
+                                    }
+                                ]
+                            },
+                            {
+                                'text': 'I have reviewed all relevant documents.'
+                            }
+                        ]
+                    },
+                    {
+                        'text': 'I am duly authorized to depose to this affidavit.'
+                    }
+                ]
+            },
+            {
+                'text': 'The facts deposed to herein are within my personal knowledge and are true and correct.',
+                'subparagraphs': [
+                    {
+                        'text': 'I have been involved in the matter since its inception.'
+                    },
+                    {
+                        'text': 'I have reviewed all relevant documents.'
+                    }
+                ]
+            },
+            {
+                'text': '...'
+            }
+        ],
         # Signature Block Information
         'signatory': {
             'name': 'John Doe',
@@ -83,20 +126,16 @@ def main():
     rendered_html = template.render(context)
 
     # Output file path
-    output_file = Path('output/founding_affidavit/founding_affidavit_test.html')
-    css_dir = output_file.parent / 'css'
+    output_file = test_output_dir / 'founding_affidavit_test.html'
 
+    output_dir.mkdir(parents=True, exist_ok=True)
     css_dir.mkdir(parents=True, exist_ok=True)
-
-    # Ensure the output directory exists
-    new_dir = output_file.parent
-    new_dir.mkdir(parents=True, exist_ok=True)
 
     # Write the rendered HTML to the output file
     with output_file.open('w', encoding='utf-8') as f:
         f.write(rendered_html)
 
-    for file_path in Path('../css/').iterdir():
+    for file_path in Path(css_src_dir).iterdir():
         shutil.copy(file_path, css_dir / file_path.name)
 
     print(f"Founding affidavit has been rendered and saved to '{output_file}'.")
