@@ -4,8 +4,6 @@
 {% from "components/macros.j2" import add_stylesheet %}
 {% from "components/macros.j2" import render_paragraphs %}
 
-{% block title %}Founding Affidavit{% endblock %}
-
 {% block styles %}
 {{ add_stylesheet("css/signature_block.css") }}
 {{ add_stylesheet("css/affidavit.css") }}
@@ -18,10 +16,9 @@
 
   <div class="affiant">
     <p>{{ affiant.name }}</p>
-    <p>ID No: {{ affiant.id_no }}</p>
   </div>
   
-  <p>do hereby make oath and state the following:</p>
+  <p>do hereby make oath and state that:</p>
 
   <div class="affidavit-content">
     {{ render_paragraphs(affidavit_content) }}
